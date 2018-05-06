@@ -14,7 +14,7 @@ database_link = "jdbc:mysql://localhost:3306/qlph?useSSL=false&useUnicode=true&c
 ```
 - Mô hình cơ sở dữ liệu 
 
-  <img src="https://github.com/c0ng4c0n/TeamOneQLPH/blob/master/Source/ER-QLPH.png">
+  <img src="https://github.com/c0ng4c0n/TeamOneQLPH/blob/master/Source/ER--QLPH.png">
   
 - Import file qlph.sql vào hệ quản trị MySQL để tạo cơ sở dữ liệu cho phần mềm. 
 
