@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="537.0" prefWidth="1104.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MuonTra.MuonTra">
+   <children>
+      <JFXTabPane prefHeight="124.0" prefWidth="974.0" stylesheets="@../css/Style.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab text="Mượn Phòng">
+              <content>
+                <AnchorPane fx:id="MuonPhong" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1061.0" style="-fx-background-color: #85C1E9;">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" layoutX="427.0" layoutY="15.0" prefHeight="82.0" prefWidth="647.0" spacing="25.0" AnchorPane.leftAnchor="427.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="15.0">
+                           <children>
+                              <JFXButton fx:id="qlphocm" alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#qlphBut" prefHeight="60.0" prefWidth="116.0" style="-fx-background-color: #0e3751;" styleClass="button3" stylesheets="@../css/button.css" text="Quản Lý Phòng Học" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" size="25" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="28.279296875" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="25.0" prefWidth="90.0" text="Tài khoản:" textFill="#154360">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#154360" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="usermuon" alignment="CENTER" prefHeight="25.0" prefWidth="90.0" text="username" textAlignment="CENTER" textFill="#154360" wrapText="true">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXButton fx:id="logoutM" alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#LogoutMT" prefHeight="32.0" prefWidth="107.0" style="-fx-background-color: #D6EAF8;" styleClass="button3" stylesheets="@../css/button.css" text="Đăng xuất" textAlignment="CENTER" textFill="#154360" wrapText="true">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#154360" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="17.279296875" />
+                                       </graphic>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="-41.0" prefHeight="78.0" prefWidth="787.0" spacing="20.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="287.0" AnchorPane.topAnchor="20.0">
+                           <children>
+                              <VBox spacing="18.0">
+                                 <children>
+                                    <HBox spacing="35.0">
+                                       <children>
+                                          <JFXTextField fx:id="namnm" focusColor="#154360" labelFloat="true" prefHeight="30.0" prefWidth="150.0" promptText=" Họ Tên" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                          <JFXTextField fx:id="phonm" focusColor="#154360" labelFloat="true" prefHeight="30.0" prefWidth="150.0" promptText=" SĐT" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                          <JFXTextField fx:id="idph" focusColor="#154360" labelFloat="true" prefHeight="30.0" prefWidth="130.0" promptText=" Mã Phòng" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                          <JFXTextField fx:id="idlm" focusColor="BLUE" labelFloat="true" prefHeight="30.0" prefWidth="130.0" promptText=" Mã Lớp" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="30.0" spacing="35.0">
+                                       <children>
+                                          <JFXCheckBox fx:id="con" alignment="CENTER" checkedColor="#154360" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #D6EAF8;" styleClass="button4" stylesheets="@../css/button.css" text="ĐK Điều Hòa" />
+                                          <JFXCheckBox fx:id="pro" alignment="CENTER" checkedColor="#154360" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #D6EAF8;" styleClass="button4" stylesheets="@../css/button.css" text="Máy Chiếu" />
+                                          <JFXCheckBox fx:id="mic" alignment="CENTER" checkedColor="#154360" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: #D6EAF8;" styleClass="button4" stylesheets="@../css/button.css" text="Micro" />
+                                          <JFXPasswordField fx:id="palm" focusColor="RED" labelFloat="true" prefHeight="30.0" prefWidth="130.0" promptText=" Mật Khẩu" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <JFXButton fx:id="mphong" alignment="CENTER" buttonType="RAISED" mnemonicParsing="false" onMouseClicked="#mphongBut" prefHeight="60.0" prefWidth="63.0" style="-fx-background-color: #21618C;" styleClass="button4" stylesheets="@../css/button.css" text="Mượn Phòng" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                     </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Trả Phòng">
+              <content>
+                <AnchorPane fx:id="TraPhong" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #85C1E9;">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" layoutX="100.0" layoutY="20.0" prefHeight="78.0" prefWidth="711.0" spacing="50.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="293.0" AnchorPane.topAnchor="20.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" spacing="18.0">
+                                 <children>
+                                    <JFXTextField fx:id="idlt" focusColor="BLUE" labelFloat="true" onAction="#SearchMlop" prefHeight="30.0" prefWidth="150.0" promptText=" Mã Lớp" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXPasswordField fx:id="palt" focusColor="RED" labelFloat="true" prefHeight="30.0" prefWidth="150.0" promptText=" Mật Khẩu" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                 </children>
+                              </VBox>
+                              <JFXButton fx:id="tphong" alignment="CENTER" buttonType="RAISED" mnemonicParsing="false" onMouseClicked="#tphongBut" prefHeight="60.0" prefWidth="63.0" style="-fx-background-color: #21618C;" styleClass="button4" stylesheets="@../css/button.css" text="Trả Phòng" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" layoutX="386.0" layoutY="15.0" prefHeight="80.0" prefWidth="688.0" spacing="25.0" AnchorPane.leftAnchor="386.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="15.0">
+                           <children>
+                              <JFXButton fx:id="qlphoct" alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#qlphBut" prefHeight="60.0" prefWidth="116.0" style="-fx-background-color: #0e3751;" styleClass="button3" stylesheets="@../css/button.css" text="Quản Lý Phòng Học" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                 <graphic>
+                                    <HBox>
+                                       <children>
+                                          <FontAwesomeIconView fill="WHITE" size="25" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="28.279296875" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                    <Label prefHeight="25.0" prefWidth="90.0" text="Tài khoản:" textFill="#154360">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#154360" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="usertra" alignment="CENTER" contentDisplay="CENTER" prefHeight="23.0" prefWidth="90.0" text="username" textAlignment="CENTER" textFill="#154360" wrapText="true">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXButton fx:id="logoutT" alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#LogoutMT" prefHeight="32.0" prefWidth="107.0" style="-fx-background-color: #D6EAF8;" styleClass="button3" stylesheets="@../css/button.css" text="Đăng xuất" textAlignment="CENTER" textFill="#154360" wrapText="true">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#154360" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="17.279296875" />
+                                       </graphic>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <ScrollPane fx:id="scroll" layoutY="140.0" prefHeight="397.0" prefWidth="1039.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="140.0">
+         <content>
+            <TableView fx:id="table" prefHeight="400.0" stylesheets="@../css/TableviewStyle.css">
+              <columns>
+                <TableColumn fx:id="mnv" prefWidth="85.0" text="Mã NV" />
+                <TableColumn fx:id="ml" prefWidth="85.0" text="Mã Lớp" />
+                  <TableColumn fx:id="mp" prefWidth="85.0" text="Mã Phòng" />
+                  <TableColumn fx:id="bd" prefWidth="150.0" text="TG Bắt Đầu" />
+                  <TableColumn fx:id="kt" prefWidth="150.0" text="TG Kết Thúc" />
+                  <TableColumn fx:id="tnm" prefWidth="150.0" text="Họ Tên NM" />
+                  <TableColumn fx:id="sdt" prefWidth="100.0" text="SĐT NM" />
+                  <TableColumn fx:id="mc" minWidth="80.0" prefWidth="80.0" text="Máy Chiếu" />
+                  <TableColumn fx:id="mi" minWidth="80.0" prefWidth="80.0" text="Micro" />
+                  <TableColumn fx:id="dh" minWidth="90.0" prefWidth="90.0" text="ĐK Điều Hòa" />
+              </columns>
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

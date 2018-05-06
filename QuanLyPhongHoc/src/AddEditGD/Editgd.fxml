@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="280.0" prefWidth="409.0" style="-fx-background-color: #2874A6;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddEditGD.Editgd">
+   <children>
+      <JFXTextField fx:id="editgv" focusColor="#95afff" labelFloat="true" layoutX="100.0" layoutY="27.0" prefHeight="38.0" prefWidth="209.0" promptText="  Mã GV" style="-fx-background-color: #FFFFFF;" unFocusColor="#96b1ff00" />
+      <JFXTextField fx:id="editlh" focusColor="#95afff" labelFloat="true" layoutX="100.0" layoutY="91.0" prefHeight="38.0" prefWidth="209.0" promptText="  Mã Lớp" style="-fx-background-color: #FFFFFF;" unFocusColor="#ff919100" />
+      <JFXTextField fx:id="editmh" focusColor="#95afff" labelFloat="true" layoutX="100.0" layoutY="155.0" prefHeight="38.0" prefWidth="209.0" promptText="  Môn Học" style="-fx-background-color: #FFFFFF;" unFocusColor="#ff919100" />
+      <JFXButton fx:id="okbut" layoutX="90.0" layoutY="215.0" onMouseClicked="#Editgd" prefHeight="38.0" prefWidth="115.0" ripplerFill="BLACK" style="-fx-background-color: #62d962;" stylesheets="@../css/button.css" text="OK">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="LOCK" size="25" text="" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="cancelbut" contentDisplay="RIGHT" layoutX="205.0" layoutY="215.0" onMouseClicked="#CancelEdit" prefHeight="38.0" prefWidth="115.0" ripplerFill="BLACK" style="-fx-background-color: #ed5e68;" styleClass="button2" stylesheets="@../css/button.css" text="Cancel">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="LOCK" size="25" text="" />
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

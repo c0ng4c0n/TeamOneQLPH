@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="286.0" prefWidth="418.0" style="-fx-background-color: #2980B9;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddEditNV.addnv">
+   <children>
+      <JFXTextField fx:id="manv" focusColor="WHITE" labelFloat="true" layoutX="52.0" layoutY="51.0" prefHeight="30.0" prefWidth="100.0" promptText="  Mã NV" style="-fx-background-color: #FFFFFF;" unFocusColor="#ffffff00" />
+      <JFXTextField fx:id="hotennv" focusColor="WHITE" labelFloat="true" layoutX="190.0" layoutY="51.0" prefHeight="30.0" prefWidth="195.0" promptText="  Họ Tên NV" style="-fx-background-color: #FFFFFF;" unFocusColor="#ffffff00" />
+      <JFXComboBox fx:id="gioitinh" focusColor="WHITE" labelFloat="true" layoutX="52.0" layoutY="106.0" prefHeight="30.0" prefWidth="100.0" promptText="  Giới Tính" style="-fx-background-color: #FFFFFF;" unFocusColor="#ffffff00" />
+      <JFXTextField fx:id="namsinh" focusColor="WHITE" labelFloat="true" layoutX="190.0" layoutY="106.0" prefHeight="30.0" prefWidth="112.0" promptText="  Năm Sinh" style="-fx-background-color: #FFFFFF;" unFocusColor="#ffffff00" />
+      <JFXTextField fx:id="chucvu" focusColor="WHITE" labelFloat="true" layoutX="52.0" layoutY="162.0" prefHeight="30.0" prefWidth="195.0" promptText="  Chức Vụ" style="-fx-background-color: #FFFFFF;" unFocusColor="#ffffff00" />
+      <JFXTextField fx:id="manvlanhdao" focusColor="WHITE" labelFloat="true" layoutX="285.0" layoutY="162.0" prefHeight="30.0" prefWidth="100.0" promptText=" Mã NV Lãnh Đạo" style="-fx-background-color: #FFFFFF;" unFocusColor="#ffffff00" />
+      <JFXButton fx:id="okbut" layoutX="109.0" layoutY="223.0" onMouseClicked="#okbutClick" prefHeight="38.0" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #62d962;" stylesheets="@../css/button.css" text="OK">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="LOCK" size="25" text="" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="cancelbut" contentDisplay="RIGHT" layoutX="209.0" layoutY="223.0" onMouseClicked="#cancelbutClick" prefHeight="38.0" prefWidth="100.0" ripplerFill="BLACK" style="-fx-background-color: #ed5e68;" styleClass="button2" stylesheets="@../css/button.css" text="Cancel">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="LOCK" size="25" text="" />
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

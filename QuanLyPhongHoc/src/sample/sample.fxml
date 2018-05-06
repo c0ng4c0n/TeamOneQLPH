@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <JFXTabPane fx:id="tabpane" prefHeight="648.0" prefWidth="1302.0" stylesheets="@../css/Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab fx:id="tabroom" text="Phòng Học">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#Moueventph" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #85C1E9;">
+                     <children>
+                        <VBox alignment="CENTER_RIGHT" layoutX="384.0" layoutY="16.0" prefHeight="76.0" prefWidth="888.0" spacing="15.0" AnchorPane.leftAnchor="485.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="16.0">
+                           <children>
+                              <Label fx:id="tkroom" prefHeight="21.0" prefWidth="180.0" text="Tài khoản: username" textFill="#1b2631">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#1b2631" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="22.714285850524902" />
+                                 </graphic>
+                              </Label>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="228.0">
+                                 <children>
+                                    <JFXButton fx:id="resph" alignment="CENTER" onMouseClicked="#ResphBut" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #2471A3;" stylesheets="@../css/button.css" text="Đặt lại" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="20.428571701049805" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton fx:id="logoutph" alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#LogoutBut" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #154360;" styleClass="button2" stylesheets="@../css/button.css" text="Đăng xuất" textFill="WHITE">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+                                       </graphic>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="60.0" layoutY="20.0" prefHeight="80.0" prefWidth="977.0" spacing="20.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="265.0" AnchorPane.topAnchor="20.0">
+                           <children>
+                              <HBox spacing="50.0">
+                                 <children>
+                                    <JFXTextField fx:id="idroom" focusColor="#154360" labelFloat="true" onAction="#Acteventph" onKeyReleased="#Keyeventph" onMouseClicked="#Moueventph" prefHeight="30.0" prefWidth="130.0" promptText=" Mã Phòng" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXComboBox fx:id="staroom" focusColor="#154360" labelFloat="true" onAction="#Acteventph" onMouseClicked="#Moueventph" prefHeight="30.0" prefWidth="120.0" promptText=" Tình Trạng" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXComboBox fx:id="proroom" focusColor="#154360" labelFloat="true" onAction="#Acteventph" onMouseClicked="#Moueventph" prefHeight="30.0" prefWidth="90.0" promptText=" Máy Chiếu" style="-fx-background-color: #D6EAF8;" unFocusColor="#ffffff00" />
+                                    <JFXComboBox fx:id="microom" focusColor="#154360" labelFloat="true" onAction="#Acteventph" onMouseClicked="#Moueventph" prefHeight="30.0" prefWidth="90.0" promptText=" Micro" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                 </children>
+                              </HBox>
+                              <HBox prefWidth="580.0" spacing="50.0">
+                                 <children>
+                                    <JFXComboBox fx:id="typroom" focusColor="#154360" labelFloat="true" onAction="#Acteventph" onMouseClicked="#Moueventph" prefHeight="30.0" prefWidth="130.0" promptText=" Loại Phòng" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="caproom" focusColor="#154360" labelFloat="true" onAction="#Acteventph" onKeyReleased="#Keyeventph" onMouseClicked="#Moueventph" prefHeight="30.0" prefWidth="120.0" promptText=" Sức Chứa (Min)" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXComboBox fx:id="conroom" focusColor="#154360" labelFloat="true" onAction="#Acteventph" onMouseClicked="#Moueventph" prefHeight="30.0" prefWidth="90.0" promptText=" Điều Hòa" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXComboBox fx:id="camroom" focusColor="#154360" labelFloat="true" onAction="#Acteventph" onMouseClicked="#Moueventph" prefHeight="30.0" prefWidth="90.0" promptText=" Camera" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <ScrollPane fx:id="scrollph" hbarPolicy="NEVER" layoutY="112.0" pickOnBounds="false" prefHeight="516.0" prefWidth="1300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="112.0">
+                           <content>
+                              <TableView fx:id="table1" onMouseClicked="#Rightclickph" stylesheets="@../css/TableviewStyle.css">
+                                 <columns>
+                                    <TableColumn fx:id="mp" prefWidth="110.0" text="Mã Phòng" />
+                                    <TableColumn fx:id="lp" prefWidth="130.0" text="Loại Phòng" />
+                                    <TableColumn fx:id="tt" prefWidth="105.0" text="Tình Trạng" />
+                                    <TableColumn fx:id="sc" prefWidth="90.0" text="Sức Chứa" />
+                                    <TableColumn fx:id="mc" prefWidth="95.0" text="Máy Chiếu" />
+                                    <TableColumn fx:id="dh" prefWidth="95.0" text="Điều Hòa" />
+                                    <TableColumn fx:id="mi" prefWidth="95.0" text="Micro" />
+                                    <TableColumn fx:id="ca" prefWidth="95.0" text="Camera" />
+                                 </columns>
+                                 <contextMenu>
+                                    <ContextMenu fx:id="contextph">
+                                      <items>
+                                          <MenuItem fx:id="addph" mnemonicParsing="false" onAction="#addphAction" text="Thêm Mới" />
+                                        <MenuItem fx:id="editph" mnemonicParsing="false" onAction="#editphAction" text="Chỉnh Sửa" />
+                                          <MenuItem fx:id="delph" mnemonicParsing="false" onAction="#delphAction" text="Xóa Bỏ" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabgv" text="Giáo Viên">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#Moueventgv" prefHeight="520.0" prefWidth="200.0" style="-fx-background-color: #85C1E9;">
+                     <children>
+                        <VBox alignment="CENTER_RIGHT" layoutX="289.0" layoutY="16.0" prefHeight="76.0" prefWidth="983.0" spacing="15.0" AnchorPane.leftAnchor="485.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="16.0">
+                           <children>
+                              <Label fx:id="tkgv" prefHeight="21.0" prefWidth="180.0" text="Tài khoản: username" textFill="#1b2631">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#1b2631" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="22.714285850524902" />
+                                 </graphic>
+                              </Label>
+                              <HBox alignment="CENTER_RIGHT">
+                                 <children>
+                                     <JFXButton fx:id="resgv" alignment="CENTER" onMouseClicked="#ResgvBut" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #2471A3;" stylesheets="@../css/button.css" text="Đặt lại" textFill="WHITE">
+                                         <font>
+                                             <Font size="14.0" />
+                                         </font>
+                                         <graphic>
+                                             <FontAwesomeIconView fill="WHITE" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="20.428571701049805" />
+                                         </graphic>
+                                    </JFXButton>
+                                    <VBox>
+                                       <children>
+                                           <JFXButton fx:id="logoutgv" alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#LogoutBut" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #154360;" styleClass="button2" stylesheets="@../css/button.css" text="Đăng xuất" textFill="WHITE">
+                                               <graphic>
+                                                   <FontAwesomeIconView fill="WHITE" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+                                               </graphic>
+                                               <font>
+                                                   <Font size="13.0" />
+                                               </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="60.0" layoutY="20.0" prefHeight="80.0" prefWidth="975.0" spacing="20.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="267.0" AnchorPane.topAnchor="20.0">
+                           <children>
+                              <HBox spacing="50.0">
+                                 <children>
+                                    <JFXTextField fx:id="idgv" focusColor="#154360" labelFloat="true" onAction="#Acteventgv" onKeyReleased="#Keyeventgv" onMouseClicked="#Moueventgv" prefHeight="30.0" prefWidth="160.0" promptText=" Mã GV" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXComboBox fx:id="sexgv" focusColor="#154360" labelFloat="true" onAction="#Acteventgv" onMouseClicked="#Moueventgv" prefHeight="30.0" prefWidth="105.0" promptText=" Giới Tính" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="emagv" focusColor="#154360" labelFloat="true" onAction="#Acteventgv" onKeyReleased="#Keyeventgv" onMouseClicked="#Moueventgv" prefHeight="30.0" prefWidth="250.0" promptText=" Email" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                 </children>
+                              </HBox>
+                              <HBox spacing="50.0">
+                                 <children>
+                                    <JFXTextField fx:id="namgv" focusColor="#154360" labelFloat="true" onAction="#Acteventgv" onKeyReleased="#Keyeventgv" onMouseClicked="#Moueventgv" prefHeight="30.0" prefWidth="160.0" promptText=" Họ Tên GV" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="birgv" focusColor="#154360" labelFloat="true" onAction="#Acteventgv" onKeyReleased="#Keyeventgv" onMouseClicked="#Moueventgv" prefHeight="30.0" prefWidth="105.0" promptText=" Năm Sinh" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="facgv" focusColor="#154360" labelFloat="true" onAction="#Acteventgv" onKeyReleased="#Keyeventgv" onMouseClicked="#Moueventgv" prefHeight="30.0" prefWidth="250.0" promptText=" Khoa" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <ScrollPane fx:id="scrollgv" hbarPolicy="NEVER" layoutY="100.0" prefHeight="516.0" prefWidth="1300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="112.0">
+                           <content>
+                              <TableView fx:id="table2" onMouseClicked="#Rightclickgv" stylesheets="@../css/TableviewStyle.css">
+                                 <columns>
+                                    <TableColumn fx:id="mgv" prefWidth="95.0" text="Mã GV" />
+                                    <TableColumn fx:id="tgv" prefWidth="150.0" text="Họ Tên GV" />
+                                    <TableColumn fx:id="ggv" prefWidth="85.0" text="Giới Tính" />
+                                    <TableColumn fx:id="ngv" prefWidth="85.0" text="Năm Sinh" />
+                                    <TableColumn fx:id="egv" prefWidth="200.0" text="Email" />
+                                    <TableColumn fx:id="kgv" prefWidth="200.0" text="Khoa" />
+                                 </columns>
+                                 <contextMenu>
+                                    <ContextMenu fx:id="contextgv">
+                                      <items>
+                                        <MenuItem fx:id="addgv" mnemonicParsing="false" onAction="#addgvAction" text="Thêm Mới" />
+                                          <MenuItem fx:id="editgv" mnemonicParsing="false" onAction="#editgvAction" text="Chỉnh sửa" />
+                                          <MenuItem fx:id="delgv" mnemonicParsing="false" onAction="#delgvAction" text="Xóa bỏ" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tablh" text="Lớp Học">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#Moueventlh" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #85C1E9;">
+                       <children>
+                        <VBox alignment="CENTER_RIGHT" layoutX="485.0" layoutY="16.0" prefHeight="76.0" prefWidth="787.0" spacing="15.0" AnchorPane.leftAnchor="485.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="16.0">
+                           <children>
+                              <Label fx:id="tklh" prefHeight="21.0" prefWidth="180.0" text="Tài khoản: username" textFill="#1b2631">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#1b2631" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="22.714285850524902" />
+                                 </graphic>
+                              </Label>
+                              <HBox alignment="CENTER_RIGHT">
+                                 <children>
+                                       <JFXButton fx:id="reslh" alignment="CENTER" onMouseClicked="#ReslhBut" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #2471A3;" stylesheets="@../css/button.css" text="Đặt lại" textFill="WHITE">
+                                           <font>
+                                               <Font size="14.0" />
+                                           </font>
+                                           <graphic>
+                                               <FontAwesomeIconView fill="WHITE" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="20.428571701049805" />
+                                           </graphic>
+                                    </JFXButton>
+                                       <JFXButton fx:id="logoutlh" alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#LogoutBut" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #154360;" styleClass="button2" stylesheets="@../css/button.css" text="Đăng xuất" textFill="WHITE">
+                                           <graphic>
+                                               <FontAwesomeIconView fill="WHITE" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+                                           </graphic>
+                                           <font>
+                                               <Font size="13.0" />
+                                           </font>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="40.0" layoutY="20.0" prefHeight="80.0" prefWidth="1013.0" spacing="20.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="259.0" AnchorPane.topAnchor="20.0">
+                           <children>
+                              <HBox prefHeight="30.0" prefWidth="909.0" spacing="45.0">
+                                 <children>
+                                    <JFXTextField fx:id="idlh" focusColor="#154360" labelFloat="true" onAction="#Acteventlh" onKeyReleased="#Keyeventlh" onMouseClicked="#Moueventlh" prefHeight="30.0" prefWidth="100.0" promptText=" Mã Lớp" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="emalh" focusColor="#154360" labelFloat="true" onAction="#Acteventlh" onKeyReleased="#Keyeventlh" onMouseClicked="#Moueventlh" prefHeight="30.0" prefWidth="160.0" promptText=" Email" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="caplh" focusColor="#154360" labelFloat="true" onAction="#Acteventlh" onKeyReleased="#Keyeventlh" onMouseClicked="#Moueventlh" prefHeight="30.0" prefWidth="100.0" promptText=" Sĩ Số (Min)" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="birlt" focusColor="#154360" labelFloat="true" onAction="#Acteventlh" onKeyReleased="#Keyeventlh" onMouseClicked="#Moueventlh" prefHeight="30.0" prefWidth="95.0" promptText=" Năm Sinh LT" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXComboBox fx:id="sexcn" focusColor="#154360" labelFloat="true" onAction="#Acteventlh" onMouseClicked="#Moueventlh" prefHeight="30.0" prefWidth="100.0" promptText=" Giới Tính CN" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="bircn" focusColor="#154360" labelFloat="true" onAction="#Acteventlh" onKeyReleased="#Keyeventlh" onMouseClicked="#Moueventlh" prefHeight="30.0" prefWidth="99.0" promptText=" Năm Sinh CN" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="30.0" prefWidth="903.0" spacing="45.0">
+                                 <children>
+                                    <JFXTextField fx:id="namlh" focusColor="#154360" labelFloat="true" onAction="#Acteventlh" onKeyReleased="#Keyeventlh" onMouseClicked="#Moueventlh" prefHeight="30.0" prefWidth="100.0" promptText=" Tên Lớp" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="namlt" focusColor="#154360" labelFloat="true" onAction="#Acteventlh" onKeyReleased="#Keyeventlh" onMouseClicked="#Moueventlh" prefHeight="30.0" prefWidth="160.0" promptText=" Họ Tên LT" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXComboBox fx:id="sexlt" focusColor="#154360" labelFloat="true" onAction="#Acteventlh" onMouseClicked="#Moueventlh" prefHeight="29.0" prefWidth="100.0" promptText=" Giới Tính LT" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="namcn" focusColor="#154360" labelFloat="true" onAction="#Acteventlh" onKeyReleased="#Keyeventlh" onMouseClicked="#Moueventlh" prefHeight="30.0" prefWidth="162.0" promptText=" Họ Tên CN" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="rancn" focusColor="#154360" labelFloat="true" onAction="#Acteventlh" onKeyReleased="#Keyeventlh" onMouseClicked="#Moueventlh" prefHeight="30.0" prefWidth="181.0" promptText=" Chức Vụ CN" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <ScrollPane fx:id="scrolllh" hbarPolicy="NEVER" layoutY="100.0" prefHeight="516.0" prefWidth="1300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="112.0">
+                           <content>
+                              <TableView fx:id="table3" onMouseClicked="#Rightclicklh" stylesheets="@../css/TableviewStyle.css">
+                                 <columns>
+                                    <TableColumn fx:id="ml" prefWidth="77.0" text="Mã Lớp" />
+                                    <TableColumn fx:id="tl" prefWidth="135.0" text="Tên Lớp" />
+                                    <TableColumn fx:id="el" prefWidth="168.0" text="Email" />
+                                    <TableColumn fx:id="sl" prefWidth="48.0" text="Sĩ Số" />
+                                    <TableColumn fx:id="tlt" prefWidth="146.0" text="Họ Tên LT" />
+                                    <TableColumn fx:id="glt" prefWidth="86.0" text="Giới Tính LT" />
+                                    <TableColumn fx:id="nlt" prefWidth="90.0" text="Năm Sinh LT" />
+                                    <TableColumn fx:id="tcn" prefWidth="155.0" text="Họ Tên CN" />
+                                    <TableColumn fx:id="gcn" prefWidth="89.0" text="Giới Tính CN" />
+                                    <TableColumn fx:id="ncn" prefWidth="91.0" text="Năm Sinh CN" />
+                                    <TableColumn fx:id="ccn" prefWidth="207.0" text="Chức Vụ CN" />
+                                 </columns>
+                                 <contextMenu>
+                                    <ContextMenu fx:id="contextlh">
+                                       <items>
+                                          <MenuItem fx:id="addlh" mnemonicParsing="false" onAction="#addlhAction" text="Thêm Mới" />
+                                          <MenuItem fx:id="editlh" mnemonicParsing="false" onAction="#editlhAction" text="Chỉnh sửa" />
+                                          <MenuItem fx:id="dellh" mnemonicParsing="false" onAction="#dellhAction" text="Xóa bỏ" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabnv" text="Nhân Viên">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#Moueventnv" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #85C1E9;">
+                     <children>
+                        <VBox alignment="CENTER_RIGHT" layoutX="362.0" layoutY="16.0" prefHeight="76.0" prefWidth="910.0" spacing="15.0" AnchorPane.leftAnchor="485.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="16.0">
+                           <children>
+                              <Label fx:id="tknv" prefHeight="21.0" prefWidth="180.0" text="Tài khoản: username" textFill="#1b2631">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#1b2631" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="22.714285850524902" />
+                                 </graphic>
+                              </Label>
+                              <HBox alignment="CENTER_RIGHT">
+                                 <children>
+                                     <JFXButton fx:id="resnv" alignment="CENTER" onMouseClicked="#ResnvBut" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #2471A3;" text="Đặt lại" textFill="WHITE">
+                                         <font>
+                                             <Font size="14.0" />
+                                         </font>
+                                         <graphic>
+                                             <FontAwesomeIconView fill="WHITE" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="20.428571701049805" />
+                                         </graphic>
+                                       <stylesheets>
+                                          <URL value="@../css/button.css" />
+                                       </stylesheets>
+                                    </JFXButton>
+                                     <JFXButton fx:id="logoutnv" alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#LogoutBut" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #154360;" styleClass="button2" text="Đăng xuất" textFill="WHITE">
+                                         <graphic>
+                                             <FontAwesomeIconView fill="WHITE" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+                                         </graphic>
+                                         <font>
+                                             <Font size="13.0" />
+                                         </font>
+                                       <stylesheets>
+                                          <URL value="@../css/button.css" />
+                                       </stylesheets>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="60.0" layoutY="20.0" prefHeight="80.0" prefWidth="976.0" spacing="20.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="266.0" AnchorPane.topAnchor="20.0">
+                           <children>
+                              <HBox spacing="50.0">
+                                 <children>
+                                    <JFXTextField fx:id="idnv" focusColor="#154360" labelFloat="true" onAction="#Acteventnv" onKeyReleased="#Keyeventnv" onMouseClicked="#Moueventnv" prefHeight="30.0" prefWidth="160.0" promptText=" Mã NV" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXComboBox fx:id="sexnv" focusColor="#154360" labelFloat="true" onAction="#Acteventnv" onMouseClicked="#Moueventnv" prefHeight="30.0" prefWidth="100.0" promptText=" Giới Tính" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="rannv" focusColor="#154360" labelFloat="true" onAction="#Acteventnv" onKeyReleased="#Keyeventnv" onMouseClicked="#Moueventnv" prefHeight="30.0" prefWidth="213.0" promptText=" Chức Vụ" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                 </children>
+                              </HBox>
+                              <HBox spacing="50.0">
+                                 <children>
+                                    <JFXTextField fx:id="namnv" focusColor="#154360" labelFloat="true" onAction="#Acteventnv" onKeyReleased="#Keyeventnv" onMouseClicked="#Moueventnv" prefHeight="30.0" prefWidth="160.0" promptText=" Họ Tên NV" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="birnv" focusColor="#154360" onAction="#Acteventnv" onKeyReleased="#Keyeventnv" onMouseClicked="#Moueventnv" prefHeight="30.0" prefWidth="100.0" promptText=" Năm Sinh" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="mnvld" focusColor="#154360" labelFloat="true" onAction="#Acteventnv" onKeyReleased="#Keyeventnv" onMouseClicked="#Moueventnv" prefHeight="30.0" prefWidth="135.0" promptText=" Mã NV Lãnh Đạo" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <ScrollPane fx:id="scrollnv" hbarPolicy="NEVER" layoutY="100.0" prefHeight="516.0" prefWidth="1300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="112.0">
+                           <content>
+                              <TableView fx:id="table4" onMouseClicked="#Rightclicknv" stylesheets="@../css/TableviewStyle.css">
+                                 <columns>
+                                    <TableColumn fx:id="mnv" prefWidth="95.0" text="Mã NV" />
+                                    <TableColumn fx:id="tnv" prefWidth="148.0" text="Họ Tên NV" />
+                                    <TableColumn fx:id="gnv" prefWidth="82.0" text="Giới Tính" />
+                                    <TableColumn fx:id="nnv" prefWidth="82.0" text="Năm Sinh" />
+                                    <TableColumn fx:id="cnv" prefWidth="244.0" text="Chức Vụ" />
+                                    <TableColumn fx:id="mldnv" prefWidth="119.0" text="Mã NV Lãnh Đạo" />
+                                 </columns>
+                                 <contextMenu>
+                                    <ContextMenu fx:id="contextnv">
+                                       <items>
+                                          <MenuItem fx:id="addnv" mnemonicParsing="false" onAction="#addnvAction" text="Thêm Mới" />
+                                          <MenuItem fx:id="editnv" mnemonicParsing="false" onAction="#editnvAction" text="Chỉnh sửa" />
+                                          <MenuItem fx:id="delnv" mnemonicParsing="false" onAction="#delnvAction" text="Xóa bỏ" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabsdt" text="Số Điện Thoại">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#Moueventnv" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #85C1E9;">
+                     <children>
+                        <VBox alignment="CENTER_RIGHT" layoutX="362.0" layoutY="16.0" prefHeight="76.0" prefWidth="910.0" spacing="15.0" AnchorPane.leftAnchor="485.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="16.0">
+                           <children>
+                              <Label fx:id="tksdt" prefHeight="21.0" prefWidth="180.0" text="Tài khoản: username" textFill="#1b2631">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#1b2631" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="22.714285850524902" />
+                                 </graphic>
+                              </Label>
+                              <HBox alignment="CENTER_RIGHT">
+                                 <children>
+                                    <JFXButton fx:id="ressdt" alignment="CENTER" onMouseClicked="#RessdtBut" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #2471A3;" text="Đặt lại" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="20.428571701049805" />
+                                       </graphic>
+                                       <stylesheets>
+                                          <URL value="@../css/button.css" />
+                                       </stylesheets>
+                                    </JFXButton>
+                                    <JFXButton fx:id="logoutsdt" alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#LogoutBut" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #154360;" styleClass="button2" text="Đăng xuất" textFill="WHITE">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+                                       </graphic>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <stylesheets>
+                                          <URL value="@../css/button.css" />
+                                       </stylesheets>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="54.0" layoutY="38.0" prefHeight="32.0" prefWidth="976.0" spacing="20.0" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="272.0" AnchorPane.topAnchor="38.0">
+                           <children>
+                              <HBox spacing="50.0">
+                                 <children>
+                                    <JFXTextField fx:id="idsdt" focusColor="#154360" labelFloat="true" onAction="#Acteventsdt" onKeyReleased="#Keyeventsdt" onMouseClicked="#Moueventsdt" prefHeight="30.0" prefWidth="160.0" promptText=" Mã Số" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="numsdt" focusColor="#154360" labelFloat="true" onAction="#Acteventsdt" onKeyReleased="#Keyeventsdt" onMouseClicked="#Moueventsdt" prefHeight="30.0" prefWidth="213.0" promptText=" Số Điện Thoại" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXComboBox fx:id="typesdt" focusColor="#154360" labelFloat="true" onAction="#Acteventsdt" onMouseClicked="#Moueventsdt" prefHeight="30.0" prefWidth="124.0" promptText=" Phân Loại" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <ScrollPane fx:id="scrollsdt" hbarPolicy="NEVER" layoutY="100.0" prefHeight="516.0" prefWidth="1300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="112.0">
+                           <content>
+                              <TableView fx:id="table6" stylesheets="@../css/TableviewStyle.css">
+                                 <columns>
+                                    <TableColumn fx:id="msdt" prefWidth="100.0" text="Mã Số" />
+                                    <TableColumn fx:id="ssdt" prefWidth="150.0" text="Số Điện Thoại" />
+                                    <TableColumn fx:id="plsdt" prefWidth="150.0" text="Phân Loại" />
+                                 </columns>
+                                 <contextMenu>
+                                    <ContextMenu fx:id="contextsdt">
+                                       <items>
+                                          <MenuItem fx:id="addsdt" mnemonicParsing="false" onAction="#addsdtAction" text="Thêm Mới" />
+                                          <MenuItem fx:id="editsdt" mnemonicParsing="false" onAction="#editsdtAction" text="Chỉnh sửa" />
+                                          <MenuItem fx:id="delsdt" mnemonicParsing="false" onAction="#delsdtAction" text="Xóa bỏ" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabgd" text="Giảng Dạy">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#Moueventnv" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #85C1E9;">
+                     <children>
+                        <VBox alignment="CENTER_RIGHT" layoutX="362.0" layoutY="16.0" prefHeight="76.0" prefWidth="910.0" spacing="15.0" AnchorPane.leftAnchor="485.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="16.0">
+                           <children>
+                              <Label fx:id="tkgd" prefHeight="21.0" prefWidth="180.0" text="Tài khoản: username" textFill="#1b2631">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#1b2631" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="22.714285850524902" />
+                                 </graphic>
+                              </Label>
+                              <HBox alignment="CENTER_RIGHT">
+                                 <children>
+                                    <JFXButton fx:id="resgd" alignment="CENTER" onMouseClicked="#ResgdBut" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #2471A3;" text="Đặt lại" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="20.428571701049805" />
+                                       </graphic>
+                                       <stylesheets>
+                                          <URL value="@../css/button.css" />
+                                       </stylesheets>
+                                    </JFXButton>
+                                    <JFXButton fx:id="logoutgd" alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#LogoutBut" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #154360;" styleClass="button2" text="Đăng xuất" textFill="WHITE">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+                                       </graphic>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <stylesheets>
+                                          <URL value="@../css/button.css" />
+                                       </stylesheets>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="54.0" layoutY="38.0" prefHeight="32.0" prefWidth="976.0" spacing="20.0" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="272.0" AnchorPane.topAnchor="38.0">
+                           <children>
+                              <HBox spacing="50.0">
+                                 <children>
+                                    <JFXTextField fx:id="gvgd" focusColor="#154360" labelFloat="true" onAction="#Acteventgd" onKeyReleased="#Keyeventgd" onMouseClicked="#Moueventgd" prefHeight="30.0" prefWidth="150.0" promptText=" Mã GV" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="lhgd" focusColor="#154360" labelFloat="true" onAction="#Acteventgd" onKeyReleased="#Keyeventgd" onMouseClicked="#Moueventgd" prefHeight="30.0" prefWidth="150.0" promptText=" Mã Lớp" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                    <JFXTextField fx:id="mhgd" focusColor="#154360" labelFloat="true" layoutX="394.0" layoutY="10.0" onAction="#Acteventgd" onKeyReleased="#Keyeventgd" onMouseClicked="#Moueventgd" prefHeight="30.0" prefWidth="250.0" promptText=" Môn Học" style="-fx-background-color: #D6EAF8;" unFocusColor="#4d4d4d00" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <ScrollPane fx:id="scrollgd" hbarPolicy="NEVER" layoutY="100.0" prefHeight="516.0" prefWidth="1300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="112.0">
+                           <content>
+                              <TableView fx:id="table7" stylesheets="@../css/TableviewStyle.css">
+                                 <columns>
+                                    <TableColumn fx:id="msgv" prefWidth="150.0" text="Mã GV" />
+                                    <TableColumn fx:id="mslh" prefWidth="150.0" text="Mã Lớp" />
+                                    <TableColumn fx:id="mhoc" prefWidth="250.0" text="Môn Học" />
+                                 </columns>
+                                 <contextMenu>
+                                    <ContextMenu fx:id="contextgd">
+                                       <items>
+                                          <MenuItem fx:id="addgd" mnemonicParsing="false" onAction="#addgdAction" text="Thêm Mới" />
+                                          <MenuItem fx:id="editgd" mnemonicParsing="false" onAction="#editgdAction" text="Chỉnh sửa" />
+                                          <MenuItem fx:id="delgd" mnemonicParsing="false" onAction="#delgdAction" text="Xóa bỏ" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabaccount" text="Tài Khoản">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #85C1E9;">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" layoutX="364.0" layoutY="14.0" prefHeight="70.0" prefWidth="908.0" spacing="50.0" AnchorPane.leftAnchor="364.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="16.0">
+                           <children>
+                              <JFXButton fx:id="mtphoc" alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#mtphocBut" prefHeight="61.0" prefWidth="128.0" style="-fx-background-color: #1A5276;" styleClass="button3" stylesheets="@../css/button.css" text="Mượn Trả Phòng Học" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" size="25" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="28.279296875" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <VBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label fx:id="tktk" prefHeight="21.0" prefWidth="180.0" text="Tài khoản: username" textFill="#1b2631">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#1b2631" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="22.714285850524902" />
+                                       </graphic>
+                                    </Label>
+                                     <JFXButton fx:id="logouttk" alignment="CENTER" contentDisplay="RIGHT" onMouseClicked="#LogoutBut" prefHeight="39.0" prefWidth="120.0" style="-fx-background-color: #154360;" styleClass="button4" stylesheets="@../css/button.css" text="Đăng xuất" textFill="WHITE">
+                                         <graphic>
+                                             <FontAwesomeIconView fill="WHITE" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+                                         </graphic>
+                                         <font>
+                                             <Font size="13.0" />
+                                         </font>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="60.0" layoutY="25.0" prefHeight="50.0" prefWidth="829.0" spacing="50.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="413.0" AnchorPane.topAnchor="25.0">
+                           <children>
+                              <JFXButton fx:id="addacc" alignment="CENTER" onMouseClicked="#AddaccBut" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #2471A3;" styleClass="button4" stylesheets="@../css/button.css" text="Thêm mới" textFill="WHITE">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" size="25" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="29.279296875" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="ediacc" alignment="CENTER" onMouseClicked="#EdiaccBut" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #2471A3;" styleClass="button4" stylesheets="@../css/button.css" text="Chỉnh sửa" textFill="WHITE">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" size="25" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="26.279296875" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="delacc" alignment="CENTER" onMouseClicked="#DelaccBut" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #2471A3;" styleClass="button4" stylesheets="@../css/button.css" text="Xóa bỏ" textFill="WHITE">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" size="25" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="28.279296875" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <ScrollPane fx:id="scrolltk" hbarPolicy="NEVER" layoutY="100.0" prefHeight="518.0" prefWidth="1302.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+                           <content>
+                              <TableView fx:id="table5" stylesheets="@../css/TableviewStyle.css">
+                                 <columns>
+                                    <TableColumn fx:id="acc" prefWidth="167.0" text="Tài Khoản" />
+                                    <TableColumn fx:id="pas" minWidth="9.0" prefWidth="285.0" text="Mật Khẩu" />
+                                    <TableColumn fx:id="typ" prefWidth="140.0" text="Phân loại" />
+                                 </columns>
+                                 <contextMenu>
+                                    <ContextMenu fx:id="contexttk">
+                                       <items>
+                                          <MenuItem fx:id="addtk" mnemonicParsing="false" onAction="#addtkAction" text="Thêm Mới" />
+                                          <MenuItem fx:id="edittk" mnemonicParsing="false" onAction="#edittkAction" text="Chỉnh sửa" />
+                                          <MenuItem fx:id="deltk" mnemonicParsing="false" onAction="#deltkAction" text="Xóa bỏ" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

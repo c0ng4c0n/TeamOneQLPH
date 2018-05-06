@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane onKeyPressed="#EnterAdd" prefHeight="280.0" prefWidth="409.0" style="-fx-background-color: #2874A6;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddEditTK.Addacc">
+   <children>
+      <JFXTextField fx:id="adduser" focusColor="#95afff" labelFloat="true" layoutX="100.0" layoutY="30.0" prefHeight="38.0" prefWidth="209.0" promptText="  Tài Khoản" style="-fx-background-color: #FFFFFF;" unFocusColor="#96b1ff00" />
+      <JFXTextField fx:id="addpass" focusColor="#ff9191" labelFloat="true" layoutX="100.0" layoutY="94.0" prefHeight="38.0" prefWidth="209.0" promptText="  Mật Khẩu" style="-fx-background-color: #FFFFFF;" unFocusColor="#ff919100" />
+      <JFXComboBox fx:id="addtype" focusColor="#fff000" labelFloat="true" layoutX="101.0" layoutY="158.0" prefHeight="38.0" prefWidth="209.0" promptText="  Phân Loại" style="-fx-background-color: #FFFFFF;" unFocusColor="#ffee0000" />
+      <JFXButton fx:id="addbut" layoutX="90.0" layoutY="218.0" onMouseClicked="#AddAccount" prefHeight="38.0" prefWidth="115.0" ripplerFill="BLACK" style="-fx-background-color: #62d962;" stylesheets="@../css/button.css" text="OK">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="LOCK" size="25" text="" />
+         </graphic></JFXButton>
+      <JFXButton fx:id="canbut" contentDisplay="RIGHT" layoutX="205.0" layoutY="218.0" onMouseClicked="#CancelAdd" prefHeight="38.0" prefWidth="115.0" ripplerFill="BLACK" style="-fx-background-color: #ed5e68;" styleClass="button2" stylesheets="@../css/button.css" text="Cancel">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="LOCK" size="25" text="" />
+         </graphic></JFXButton>
+      <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="61.0" layoutY="63.0" size="25" text="" />
+      <FontAwesomeIconView fill="WHITE" glyphName="LOCK" layoutX="64.0" layoutY="127.0" size="25" text="" />
+      <FontAwesomeIconView fill="WHITE" glyphName="LOCK" layoutX="60.0" layoutY="187.0" size="25" text="" />
+   </children>
+</AnchorPane>

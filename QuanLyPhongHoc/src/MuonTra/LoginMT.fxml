@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loginpane" focusTraversable="true" onKeyPressed="#EnterMT" prefHeight="322.0" prefWidth="477.0" style="-fx-background-color: #a6d1fc;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MuonTra.LoginMT">
+   <children>
+      <JFXTextField fx:id="username" focusColor="#1e5dd6" labelFloat="true" layoutX="100.0" layoutY="121.0" opacity="0.8" prefHeight="45.0" prefWidth="277.0" promptText=" Tài khoản" style="-fx-background-color: #FFFFFF;" unFocusColor="#20d4c200">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="password" focusColor="#e80000" labelFloat="true" layoutX="100.0" layoutY="196.0" opacity="0.8" prefHeight="45.0" prefWidth="277.0" promptText=" Mật khẩu" style="-fx-background-color: #FFFFFF;" unFocusColor="#e5000000">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton fx:id="loginbut" layoutX="100.0" layoutY="264.0" onMouseClicked="#LoginClick" prefHeight="45.0" prefWidth="277.0" style="-fx-background-color: #079BCF;" text="Đăng nhập" textFill="WHITE">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="59.0" layoutY="154.0" size="30" text="" />
+      <FontAwesomeIconView fill="WHITE" glyphName="LOCK" layoutX="61.0" layoutY="229.0" size="30" text="" />
+      <ImageView fitHeight="112.0" fitWidth="350.0" layoutX="89.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Untitled2.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

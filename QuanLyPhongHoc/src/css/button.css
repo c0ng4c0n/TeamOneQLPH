@@ -1,0 +1,30 @@
+.button{
+
+  -fx-border-radius: 20 0 0 20;
+  -fx-background-radius: 20 0 0 20;
+
+  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+
+.button2{
+-fx-border-radius: 0 20 20 0;
+  -fx-background-radius: 0 20 20 0;
+
+  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+
+.button3{
+-fx-border-radius: 10 10 10 10;
+-fx-background-radius: 10 10 10 10;
+-fx-background-color: #1c91ff
+
+  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+
+.button4{
+-fx-border-radius: 40 40 40 40;
+-fx-background-radius: 40 40 40 40;
+-fx-background-color: #1c91ff
+
+  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
