@@ -57,5 +57,8 @@ Phần mềm được xây dựng bởi các thành viên trong TeamOneQLPH gồ
   <img src="https://github.com/c0ng4c0n/TeamOneQLPH/blob/master/Source/TaiKhoan.png">
   
 # V. Liên hệ   
-Mọi thắc mắc liên quan đến phần mềm liên hệ qua email quatphu97mdbg@gmail.com . (Có tính phí hỏi đáp :D) 
+Mọi thắc mắc liên quan đến phần mềm liên hệ qua email quatphu97mdbg@gmail.com . 
+
+(Có tính phí hỏi đáp :D) 
+
 Thanks!
