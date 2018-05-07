@@ -28,7 +28,7 @@ database_link = "jdbc:mysql://localhost:3306/qlph?useSSL=false&useUnicode=true&c
 ```
 
 # III. Đóng góp 
-Phần mềm được được hướng được xây dựng bởi các thành viên trong TeamOneQLPH gồm có:
+Phần mềm được xây dựng bởi các thành viên trong TeamOneQLPH gồm có:
 - Phù Văn Quất
 - Tạ Hồng Giang
 - Nguyễn Trọng Tài 
