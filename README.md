@@ -3,7 +3,7 @@
 Phần mềm quản lý phòng học là phần mềm được viết bằng ngôn ngữ Java sử dụng hệ cơ sở dữ liệu MySQL. Giúp cho quá trình mượn, trả và quản lý phòng học trong HVAN một cách dễ dàng và tiện lợi.
 
 # I. Tài liệu hướng dẫn
-Chi tiết tài liệu hướng dẫn của chúng tôi ở : ....
+Chi tiết tài liệu hướng dẫn của chúng tôi ở đây :D 
 
 # II. Cài đặt
 ## 1. Cài đặt XAMP để sử dụng hệ quản trị cơ sở dữ liệu MySQL
